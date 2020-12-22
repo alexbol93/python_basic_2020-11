@@ -17,7 +17,7 @@ def exponentiation(numbers_list, y=2):
     return [x**y for x in numbers_list]
 
 
-@time_chek
+@time_check
 def get_filtred_numbers(numbers_list, operation='even'):
     res = []
     if operation not in ['even', 'odd', 'prime']:
