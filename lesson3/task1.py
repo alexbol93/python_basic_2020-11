@@ -1,7 +1,7 @@
 import time
 
 
-def time_chek(func):
+def time_check(func):
     def wrapper(*args, **kwargs):
         start_time = time.perf_counter()
         value = func(*args, **kwargs)
