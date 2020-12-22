@@ -12,7 +12,7 @@ def time_check(func):
     return wrapper
 
 
-@time_chek
+@time_check
 def exponentiation(numbers_list, y=2):
     return [x**y for x in numbers_list]
 
