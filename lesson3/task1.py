@@ -26,7 +26,6 @@ def exponentiation(numbers_list, y=2):
 
 @time_check
 def get_filtred_numbers(numbers_list, operation=EVEN_OPERATION):
-    res = []
     if operation not in [EVEN_OPERATION, ODD_OPERATION, PRIME_OPERATION]:
         print(f'Укажите корректное название операции even, odd, prime')
     if operation == EVEN_OPERATION:
