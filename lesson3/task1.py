@@ -6,6 +6,7 @@ EVEN_OPERATION = 'even'
 ODD_OPERATION = 'odd'
 PRIME_OPERATION = 'prime'
 
+
 def time_check(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -20,7 +21,7 @@ def time_check(func):
 
 @time_check
 def exponentiation(numbers_list, y=2):
-    return list(map(pow, numbers_list, [y for elem in range(len(numbers_list))])) #Не знаю как передать у=2 вторым аргументом в pow, пришлось генерить список из у, list comprehension выглядит проще здесь
+    return [pow(x, y) for x in numbers_list]
 
 
 @time_check
