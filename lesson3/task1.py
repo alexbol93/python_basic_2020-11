@@ -2,6 +2,9 @@ import time
 from functools import wraps
 from operator import pow
 
+EVEN_OPERATION = 'even'
+ODD_OPERATION = 'odd'
+PRIME_OPERATION = 'prime'
 
 def time_check(func):
     @wraps(func)
@@ -21,15 +24,15 @@ def exponentiation(numbers_list, y=2):
 
 
 @time_check
-def get_filtred_numbers(numbers_list, operation='even'):
+def get_filtred_numbers(numbers_list, operation=EVEN_OPERATION):
     res = []
-    if operation not in ['even', 'odd', 'prime']:
+    if operation not in [EVEN_OPERATION, ODD_OPERATION, PRIME_OPERATION]:
         print(f'Укажите корректное название операции even, odd, prime')
-    if operation == 'even':
+    if operation == EVEN_OPERATION:
         return [x for x in numbers_list if x % 2 == 0]
-    elif operation == 'odd':
+    elif operation == ODD_OPERATION:
         return [x for x in numbers_list if x % 2 != 0]
-    elif operation == 'prime':
+    elif operation == PRIME_OPERATION:
         return [x for x in numbers_list if is_prime_number(x)]
 
 
@@ -46,5 +49,5 @@ def is_prime_number(number):
 
 if __name__ == '__main__':
     print(exponentiation([1, 4, 5, 5, 7, 32]))
-    print(get_filtred_numbers([1, 2, 4, 5, 5, 7, 32], operation='prime'))
+    print(get_filtred_numbers([1, 2, 4, 5, 5, 7, 32], operation=PRIME_OPERATION))
 
